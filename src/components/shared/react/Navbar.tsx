@@ -38,15 +38,12 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 h-20 bg-dark/88 backdrop-blur-sm">
       <div className="flex items-center justify-between h-full px-6 md:px-20">
-        {/* Logo */}
         <a href="/" className="flex items-center gap-3 no-underline">
           <DiamondIcon />
           <span className="font-heading text-gold text-[28px] font-semibold tracking-[4px] leading-none">
             AURUM
           </span>
         </a>
-
-        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-12 list-none m-0 p-0">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -59,16 +56,12 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* CTA desktop */}
         <Button
           href="#reservaciones"
           className="hidden md:inline-block py-3 px-8"
         >
           RESERVAR
         </Button>
-
-        {/* Hamburger button (mobile) */}
         <button
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
@@ -85,8 +78,6 @@ export default function Navbar() {
           />
         </button>
       </div>
-
-      {/* Mobile overlay */}
       <div
         className={`md:hidden fixed inset-0 bottom-[-200px] h-screen z-40 flex flex-col items-center justify-center bg-dark backdrop-blur-xl transition-opacity duration-500 ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
