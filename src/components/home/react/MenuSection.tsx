@@ -1,21 +1,12 @@
 import { useState } from 'react';
 import Card from '@/components/shared/react/Card';
 import menuData from '@/data/menuData.json';
+import { MENU_TABS, type MenuData, type MenuTab } from '@/types/menu';
 
-const TABS = ['Entradas', 'Principales', 'Postres'] as const;
-type Tab = (typeof TABS)[number];
-
-interface Dish {
-  name: string;
-  description: string;
-  price: string;
-  image?: string;
-}
-
-const MENU_DATA = menuData as Record<Tab, Dish[]>;
+const MENU_DATA = menuData as MenuData;
 
 export default function MenuSection() {
-  const [activeTab, setActiveTab] = useState<Tab>('Entradas');
+  const [activeTab, setActiveTab] = useState<MenuTab>('Entradas');
   const dishes = MENU_DATA[activeTab];
   return (
     <section id="menu" className="bg-dark py-28 px-6">
@@ -37,7 +28,7 @@ export default function MenuSection() {
           </h2>
         </div>
         <div className="flex justify-center gap-2 mb-12 flex-wrap">
-          {TABS.map((tab) => (
+          {MENU_TABS.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}

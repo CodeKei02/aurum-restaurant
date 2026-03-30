@@ -1,14 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-type CountUpOptions = {
-  start?: number;
-  duration?: number;
-  ease?: string;
-  triggerStart?: string;
-  once?: boolean;
-  formatter?: (value: number, el: HTMLElement) => string;
-};
+import type { CountUpOptions } from '@/types/count-up';
 
 let isScrollTriggerRegistered = false;
 

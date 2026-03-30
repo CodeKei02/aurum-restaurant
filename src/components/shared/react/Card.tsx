@@ -1,9 +1,4 @@
-interface CardProps {
-  name: string;
-  description: string;
-  price: string;
-  image?: string;
-}
+import type { CardProps } from '@/types/card';
 
 export default function Card({ name, description, price, image }: CardProps) {
   return (

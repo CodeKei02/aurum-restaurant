@@ -1,14 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
-
-interface FormData {
-  nombre: string;
-  telefono: string;
-  fecha: string;
-  hora: string;
-  comensales: string;
-  ocasion: string;
-}
+import type { ReservationFormData } from '@/types/reservaciones';
 
 const HORAS = [
   '12:00',
@@ -42,7 +34,7 @@ const FIELD_INPUT_CLASS =
   'w-full border-0 border-b border-border-subtle bg-transparent py-3.5 font-body text-sm text-white outline-none transition-colors duration-300 focus:border-gold';
 
 export default function ReservacionesSection() {
-  const [form, setForm] = useState<FormData>({
+  const [form, setForm] = useState<ReservationFormData>({
     nombre: '',
     telefono: '',
     fecha: '',

@@ -2,9 +2,10 @@ import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import type { ChevronDirection, GalleryImage } from '@/types/ambiente';
 import 'swiper/css';
 
-const GALLERY_IMAGES = [
+const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: '/images/ambiente-salon-principal.png',
     alt: 'Salón Principal',
@@ -31,7 +32,7 @@ const GALLERY_IMAGES = [
   },
 ];
 
-function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
+function ChevronIcon({ direction }: { direction: ChevronDirection }) {
   return (
     <svg
       width="18"
