@@ -137,7 +137,9 @@ export default function AmbienteSection() {
         </div>
 
         {/* Right: nav arrows */}
-        <div style={{ display: 'flex', gap: '0.5rem', paddingBottom: '0.25rem' }}>
+        <div
+          style={{ display: 'flex', gap: '0.5rem', paddingBottom: '0.25rem' }}
+        >
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Imagen anterior"
@@ -239,7 +241,6 @@ export default function AmbienteSection() {
                     'scale(1)';
                 }}
               />
-              {/* Bottom gradient overlay */}
               <div
                 style={{
                   position: 'absolute',
@@ -249,7 +250,6 @@ export default function AmbienteSection() {
                   pointerEvents: 'none',
                 }}
               />
-              {/* Text overlay */}
               <div
                 style={{
                   position: 'absolute',

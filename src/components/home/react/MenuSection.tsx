@@ -65,8 +65,6 @@ export default function MenuSection() {
             ))
             .slice(0, 4)}
         </div>
-
-        {/* CTA */}
         <div className="text-center mt-14">
           <Button
             href="/menu"
