@@ -1,0 +1,176 @@
+{
+  "Entradas": [
+    {
+      "name": "Tartar de Atún Rojo",
+      "description": "Atún rojo de almadraba, aguacate cremoso, gel de yuzu, huevas de tobiko y aceite de sesamo",
+      "price": "$18",
+      "image": "/images/entry-tartare-atun-rojo.png"
+    },
+    {
+      "name": "Foie Gras Mi Cuit",
+      "description": "Terrina de foie gras de pato, compota de higos y brioche tostado artesanal",
+      "price": "$20",
+      "image": "/images/entry-foie-gras-mi-cuit.png"
+    },
+    {
+      "name": "Vieras a la plancha",
+      "description": "Vieras salvajes con mantequilla de ajo y perejil, emulsión de limón y crujiente de panceta",
+      "price": "$56",
+      "image": "/images/entry-vieras-plancha.png"
+    },
+    {
+      "name": "Burrata di Puglia",
+      "description": "Burrata cremosa con tomates heritage y pesto de albahaca",
+      "price": "$28",
+      "image": "/images/entry-burrata-di-puglia.png"
+    },
+    {
+      "name": "Gazpacho Andaluz",
+      "description": "Sopa fría de tomate, pimiento, pepino y pan con aceite de oliva virgen extra",
+      "price": "$12",
+      "image": "/images/entry-gazpacho-andaluz.png"
+    }
+  ],
+  "Principales": [
+    {
+      "name": "Costillar de Cordero",
+      "description": "Costilla de cordero lechal asada a baja temperatura, puré de patata trufado y salsa de menta",
+      "price": "$34",
+      "image": "/images/main-costillar-cordero.png"
+    },
+    {
+      "name": "Chuleton de Wagyu",
+      "description": "Chuleton de wagyu A5, puré de patata trufado y reducción de vino tinto",
+      "price": "$85",
+      "image": "/images/main-chuleton-wagyu.png"
+    },
+    {
+      "name": "Rodaballo Salvaje",
+      "description": "Rodaballo salvaje a la parrilla con salsa de mantequilla y limón",
+      "price": "$48",
+      "image": "/images/main-rodaballo-salvaje.png"
+    },
+    {
+      "name": "Risotto de Boletus",
+      "description": "Risotto cremoso con boletus, parmesano y aceite de trufa",
+      "price": "$34",
+      "image": "/images/main-risotto-boletus.png"
+    },
+    {
+      "name": "Magret de Pato",
+      "description": "Magret de pato a la parrilla con salsa de frutos rojos y puré de patata trufado",
+      "price": "$34",
+      "image": "/images/main-magret-pato.png"
+    },
+    {
+      "name": "Bogavante a la Brasa",
+      "description": "Bogavante fresco a la brasa con mantequilla de ajo y hierbas",
+      "price": "$34",
+      "image": "/images/main-bogavante-brasa.png"
+    }
+  ],
+  "Postres": [
+    {
+      "name": "Coulant de Chocolate",
+      "description": "Chocolate Valrhona 70% con helado de vainilla de Madagascar",
+      "price": "$14",
+      "image": "/images/dessert-coulant-chocolate.png"
+    },
+    {
+      "name": "Tiramisú Clásico",
+      "description": "Bizcocho de soletilla, mascarpone cremoso, café espresso y cacao amargo",
+      "price": "$13",
+      "image": "/images/dessert-tiramisu-clasic.png"
+    },
+    {
+      "name": "Crème Brûlée",
+      "description": "Crema catalana clásica con caramelo crujiente",
+      "price": "$12",
+      "image": "/images/dessert-creme-brulee.png"
+    },
+    {
+      "name": "Sorbete Trilogia",
+      "description": "Trilogia de sorbetes: mango, frambuesa del valle y limón con menta frescas",
+      "price": "$11",
+      "image": "/images/dessert-sorbete-trilogia.png"
+    }
+  ],
+  "Tintos": [
+    {
+      "name": "Château Margaux 2015",
+      "description": "Burdeos, Francia — Notas de cassis, violeta y grafito",
+      "price": "$320"
+    },
+    {
+      "name": "Opus One 2018",
+      "description": "Napa Valley, USA — Cabernet Sauvignon con taninos sedosos",
+      "price": "$280"
+    },
+    {
+      "name": "Cloudy Bay 2022",
+      "description": "Marlborough, NZ — Sauvignon Blanc fresco y mineral",
+      "price": "$45"
+    },
+    {
+      "name": "Dom Pérignon 2012",
+      "description": "Champagne, Francia — Elegancia efervescente, notas cítricas",
+      "price": "$350"
+    }
+  ],
+  "Blancos": [
+    {
+      "name": "Cloudy Bay 2022",
+      "description": "Marlborough, NZ — Sauvignon Blanc fresco y mineral",
+      "price": "$45"
+    },
+    {
+      "name": "Château d'Yquem 2015",
+      "description": "Sauternes, Francia — Dulce con notas de miel y albaricoque",
+      "price": "$250"
+    },
+    {
+      "name": "Riesling Dr. Loosen 2020",
+      "description": "Mosel, Alemania — Riesling seco con acidez vibrante",
+      "price": "$30"
+    },
+    {
+      "name": "Chablis Grand Cru Les Clos 2018",
+      "description": "Borgoña, Francia — Chardonnay con mineralidad y elegancia",
+      "price": "$120"
+    }
+  ],
+  "Espumosos": [
+    {
+      "name": "Dom Pérignon 2012",
+      "description": "Champagne, Francia — Elegancia efervescente, notas cítricas",
+      "price": "$350"
+    },
+    {
+      "name": "Veuve Clicquot Brut Yellow Label",
+      "description": "Champagne, Francia — Brut con notas de manzana y brioche",
+      "price": "$60"
+    },
+    {
+      "name": "Freixenet Cordon Negro",
+      "description": "Cava, España — Fresco y afrutado con burbujas finas",
+      "price": "$25"
+    }
+  ],
+  "Cocteles de Autor": [
+    {
+      "name": "Negroni Sbagliato",
+      "description": "Campari, vermut rojo y prosecco — Un giro burbujeante al clásico Negroni",
+      "price": "$14"
+    },
+    {
+      "name": "Margarita de Maracuyá",
+      "description": "Tequila, licor de naranja, jugo de maracuyá fresco y un toque de lima — Exótico y refrescante",
+      "price": "$12"
+    },
+    {
+      "name": "Old Fashioned de Vainilla",
+      "description": "Bourbon, azúcar moreno, amargo de angostura y esencia de vainilla — Un clásico con un toque dulce",
+      "price": "$15"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<section id="hero" class="relative h-screen w-full overflow-hidden">
+  <div
+    id="hero-bg"
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url('/images/header-image.png');"
+  >
+  </div>
+
+  <div
+    id="hero-overlay"
+    class="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark"
+  >
+  </div>
+
+  <div
+    id="hero-content"
+    class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center"
+  >
+    <div class="mb-6 flex items-center gap-4">
+      <span class="block h-px w-12 bg-gold"></span>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        class="text-gold"
+      >
+        <path
+          d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"
+        ></path>
+      </svg>
+      <span class="block h-px w-12 bg-gold"></span>
+    </div>
+
+    <h1
+      class="font-heading text-[clamp(3rem,8vw,7rem)] font-light leading-none tracking-[0.3em] text-gold"
+    >
+      AURUM
+    </h1>
+
+    <p
+      class="mt-4 max-w-md font-heading text-[clamp(1rem,2.5vw,1.5rem)] font-light italic tracking-wide text-white/80"
+    >
+      Donde cada plato cuenta una historia
+    </p>
+
+    <a
+      href="#historia"
+      id="hero-cta"
+      class="mt-16 flex flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold"
+    >
+      <span class="font-body text-xs tracking-[3px] uppercase">Descubrir</span>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        class="animate-bounce"
+      >
+        <path d="M12 5v14M19 12l-7 7-7-7"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const heroBg = document.getElementById('hero-bg');
+  const heroContent = document.getElementById('hero-content');
+  const heroOverlay = document.getElementById('hero-overlay');
+
+  if (heroBg && heroContent && heroOverlay) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+        pin: false,
+      },
+    });
+
+    tl.to(heroBg, { y: '30%', scale: 1.1, ease: 'none' }, 0);
+    tl.to(heroContent, { y: '-20%', opacity: 0, ease: 'none' }, 0);
+    tl.to(heroOverlay, { opacity: 1, ease: 'none' }, 0);
+  }
+</script>
