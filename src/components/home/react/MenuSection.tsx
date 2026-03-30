@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Button } from '@/components/shared/react/Button';
 import Card from '@/components/shared/react/Card';
 import menuData from '@/data/menuData.json';
 
@@ -64,15 +63,6 @@ export default function MenuSection() {
               />
             ))
             .slice(0, 4)}
-        </div>
-        <div className="text-center mt-14">
-          <Button
-            href="/menu"
-            variant="outline"
-            className="inline-block py-4 px-10"
-          >
-            Ver Carta Completa
-          </Button>
         </div>
       </div>
     </section>
