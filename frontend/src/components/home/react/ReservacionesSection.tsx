@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
+import ReservationForm from '@/components/shared/react/ReservationForm';
 import type { ReservationFormData } from '@/types/reservaciones';
 
 const HORAS = [
@@ -26,12 +27,6 @@ const OCASIONES = [
   'Aniversario',
   'Otro',
 ];
-
-const FIELD_LABEL_CLASS =
-  'mb-2 block font-body text-[0.7rem] font-medium tracking-[2px] text-text-secondary uppercase';
-
-const FIELD_INPUT_CLASS =
-  'w-full border-0 border-b border-border-subtle bg-transparent py-3.5 font-body text-sm text-white outline-none transition-colors duration-300 focus:border-gold';
 
 export default function ReservacionesSection() {
   const [form, setForm] = useState<ReservationFormData>({
@@ -144,122 +139,14 @@ export default function ReservacionesSection() {
             </div>
           </div>
 
-          <form
+          <ReservationForm
+            form={form}
+            submitted={submitted}
+            hours={HORAS}
+            occasions={OCASIONES}
+            onChange={handleChange}
             onSubmit={handleSubmit}
-            className="border border-border-subtle bg-dark-lighter p-6 sm:p-10"
-          >
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="sm:col-span-2">
-                <label className={FIELD_LABEL_CLASS}>Nombre</label>
-                <input
-                  type="text"
-                  name="nombre"
-                  value={form.nombre}
-                  onChange={handleChange}
-                  placeholder="Tu nombre completo"
-                  required
-                  className={FIELD_INPUT_CLASS}
-                />
-              </div>
-
-              <div className="sm:col-span-2">
-                <label className={FIELD_LABEL_CLASS}>Teléfono</label>
-                <input
-                  type="tel"
-                  name="telefono"
-                  value={form.telefono}
-                  onChange={handleChange}
-                  placeholder="+52 (55) 0000 0000"
-                  required
-                  className={FIELD_INPUT_CLASS}
-                />
-              </div>
-
-              <div>
-                <label className={FIELD_LABEL_CLASS}>Fecha</label>
-                <input
-                  type="date"
-                  name="fecha"
-                  value={form.fecha}
-                  onChange={handleChange}
-                  required
-                  className={FIELD_INPUT_CLASS}
-                />
-              </div>
-
-              <div>
-                <label className={FIELD_LABEL_CLASS}>Hora</label>
-                <select
-                  name="hora"
-                  value={form.hora}
-                  onChange={handleChange}
-                  required
-                  className={`${FIELD_INPUT_CLASS} cursor-pointer appearance-none`}
-                >
-                  <option value="" disabled>
-                    Seleccionar
-                  </option>
-                  {HORAS.map((h) => (
-                    <option key={h} value={h}>
-                      {h}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className={FIELD_LABEL_CLASS}>Comensales</label>
-                <select
-                  name="comensales"
-                  value={form.comensales}
-                  onChange={handleChange}
-                  required
-                  className={`${FIELD_INPUT_CLASS} cursor-pointer appearance-none`}
-                >
-                  <option value="" disabled>
-                    Seleccionar
-                  </option>
-                  {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
-                    <option key={n} value={n}>
-                      {n} {n === 1 ? 'persona' : 'personas'}
-                    </option>
-                  ))}
-                  <option value="10+">10+ personas</option>
-                </select>
-              </div>
-
-              <div>
-                <label className={FIELD_LABEL_CLASS}>Ocasión</label>
-                <select
-                  name="ocasion"
-                  value={form.ocasion}
-                  onChange={handleChange}
-                  required
-                  className={`${FIELD_INPUT_CLASS} cursor-pointer appearance-none`}
-                >
-                  <option value="" disabled>
-                    Seleccionar
-                  </option>
-                  {OCASIONES.map((o) => (
-                    <option key={o} value={o}>
-                      {o}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              className={`mt-8 w-full border-0 px-4 py-4 font-body text-xs font-semibold tracking-[2px] uppercase transition-colors duration-300 ${
-                submitted
-                  ? 'bg-[#2a5a2a] text-white'
-                  : 'bg-gold text-dark hover:bg-gold-dark'
-              }`}
-            >
-              {submitted ? '✓ Reserva Confirmada' : 'Confirmar Reserva'}
-            </button>
-          </form>
+          />
         </div>
       </div>
     </section>

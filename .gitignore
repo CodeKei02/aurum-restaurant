@@ -1,17 +1,17 @@
 # build output
-dist/
+frontend/dist/
 
 # generated types
-.astro/
+frontend/.astro/
 
 # dependencies
-node_modules/
+frontend/node_modules/
 
 # logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
 
 # environment variables
 .env
@@ -22,3 +22,20 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# frontend local settings and secrets
+frontend/.claude/
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+frontend/.env.test
+frontend/.env.*.local
+
+# frontend cache and temp artifacts
+frontend/.cache/
+frontend/.temp/
+frontend/.tmp/
+frontend/.sass-cache/
+frontend/coverage/
+frontend/*.log
