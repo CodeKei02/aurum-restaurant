@@ -39,10 +39,33 @@ export default function ReservacionesSection() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
+  const handleChange = async (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+    const reservationData = {
+      nombre: form.nombre,
+      telefono: form.telefono,
+      fecha: form.fecha,
+      hora: form.hora,
+      comensales: form.comensales,
+      ocasion: form.ocasion,
+    };
+
+    const response = await fetch('http://localhost:3000/api/reservaciones', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        reservationData,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Error al enviar la reserva');
+    }
   };
 
   const handleSubmit = (e: FormEvent) => {
