@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Card from '@/components/shared/react/Card';
-import menuData from '@/data/menuData.json';
+import menuData from '../../../../../backend/data/menuData.json';
 import { MENU_TABS, type MenuData, type MenuTab } from '@/types/menu';
 
 const MENU_DATA = menuData as MenuData;
