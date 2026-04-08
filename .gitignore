@@ -6,7 +6,7 @@ frontend/.astro/
 
 # dependencies
 frontend/node_modules/
-
+backend/node_modules/
 # logs
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
