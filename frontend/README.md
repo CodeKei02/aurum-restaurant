@@ -1,134 +1,134 @@
 # Aurum Restaurant Website
 
-Sitio web de una marca gastronómica premium construido con Astro, React y Tailwind CSS v4.
+Premium restaurant brand website built with Astro, React, and Tailwind CSS v4.
 
-El proyecto presenta una landing page de restaurante con enfoque visual elegante: hero con efecto parallax, sección de historia con animaciones de conteo, carta dinámica por categorías, galería de ambiente en carrusel y formulario de reservaciones.
+The project features a restaurant landing page with an elegant visual direction: a hero section with a parallax effect, a story section with animated counters, a dynamic category-based menu, an ambiance gallery carousel, and a reservation form.
 
-## Características principales
+## Key Features
 
-- Arquitectura híbrida Astro + React para combinar rendimiento y componentes interactivos.
-- Estilo visual dark/gold con variables de tema en CSS.
-- Navegación responsive con menú móvil.
-- Hero con animación al hacer scroll (GSAP + ScrollTrigger).
-- Contadores animados reutilizables mediante hook custom (`useCountUp`).
-- Menú gastronómico renderizado desde datos JSON.
-- Carrusel de galería con Swiper.
-- Formulario de reservación con estado de confirmación en cliente.
+- Hybrid Astro + React architecture to combine performance with interactive components.
+- Dark/gold visual style powered by CSS theme variables.
+- Responsive navigation with a mobile menu.
+- Hero section with scroll-based animation (GSAP + ScrollTrigger).
+- Reusable animated counters through a custom `useCountUp` hook.
+- Restaurant menu rendered from JSON data.
+- Gallery carousel powered by Swiper.
+- Reservation form with client-side confirmation state.
 
-## Stack tecnológico
+## Tech Stack
 
 - Astro 5
 - React 19 + React DOM 19
-- Tailwind CSS v4 (integrado vía plugin Vite)
+- Tailwind CSS v4 (integrated via the Vite plugin)
 - TypeScript
 - GSAP
 - Swiper
 
-## Requisitos
+## Requirements
 
-- Node.js 18.20.0 o superior (recomendado Node.js 20 LTS)
-- pnpm (recomendado, existe `pnpm-lock.yaml`)
+- Node.js 18.20.0 or higher (Node.js 20 LTS recommended)
+- pnpm (recommended, `pnpm-lock.yaml` is included)
 
-## Instalación
+## Installation
 
-1. Clona el repositorio.
-2. Instala dependencias:
+1. Clone the repository.
+2. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-## Scripts disponibles
+## Available Scripts
 
 ```bash
-# Desarrollo local
+# Local development
 pnpm dev
 
-# Build de producción
+# Production build
 pnpm build
 
-# Vista previa del build
+# Preview production build
 pnpm preview
 
-# Comando CLI de Astro
+# Astro CLI command
 pnpm astro
 ```
 
-## Estructura del proyecto
+## Project Structure
 
 ```text
 src/
 	components/
 		home/
-			astro/            # Secciones estáticas o con scripts Astro
-			react/            # Secciones interactivas (tabs, carrusel, formulario)
+			astro/            # Static sections or sections with Astro scripts
+			react/            # Interactive sections (tabs, carousel, form)
 		shared/
 			astro/            # Footer
 			react/            # Navbar, Button, Card
 	data/
-		menuData.json       # Datos de menú (platos, vinos, cocteles)
+		menuData.json       # Menu data (dishes, wines, cocktails)
 	hooks/
-		useCountUp.ts       # Hook reutilizable para contadores animados
+		useCountUp.ts       # Reusable hook for animated counters
 	layouts/
-		Layout.astro        # Layout base (head, fuentes, navbar)
+		Layout.astro        # Base layout (head, fonts, navbar)
 	pages/
-		index.astro         # Página principal
+		index.astro         # Main page
 	styles/
-		global.css          # Tailwind + variables de diseño
+		global.css          # Tailwind + design variables
 
 public/
-	images/               # Recursos visuales
+	images/               # Visual assets
 ```
 
-## Paquetes y propósito
+## Packages and Purpose
 
-### Dependencias de aplicación
+### Application Dependencies
 
-- `astro`: framework principal.
-- `@astrojs/react`: integración oficial para usar componentes React dentro de Astro.
-- `react`, `react-dom`: UI interactiva en secciones cliente.
-- `tailwindcss`, `@tailwindcss/vite`: utilidades de estilos y plugin de integración con Vite.
-- `gsap`: animaciones (hero y conteos con scroll).
-- `swiper`: carrusel de galería en la sección de ambiente.
-- `embla-carousel-react`: instalado, pero actualmente no se observa uso activo en el código.
-- `@types/react`, `@types/react-dom`: tipos para TypeScript en React.
+- `astro`: main framework.
+- `@astrojs/react`: official integration for using React components inside Astro.
+- `react`, `react-dom`: interactive UI for client-side sections.
+- `tailwindcss`, `@tailwindcss/vite`: styling utilities and Vite integration plugin.
+- `gsap`: animations (hero and scroll-triggered counters).
+- `swiper`: gallery carousel in the ambiance section.
+- `embla-carousel-react`: installed, but currently no active usage is visible in the codebase.
+- `@types/react`, `@types/react-dom`: TypeScript typings for React.
 
-### Dependencias de desarrollo
+### Development Dependencies
 
-- `prettier`: formateo de código.
-- `prettier-plugin-astro`: soporte de formateo para archivos `.astro`.
+- `prettier`: code formatting.
+- `prettier-plugin-astro`: formatting support for `.astro` files.
 
-## Cómo funciona la página
+## How the Page Works
 
-La home principal está compuesta por estas secciones:
+The main homepage is composed of these sections:
 
-1. Hero de marca con fondo full-screen y efecto parallax al scroll.
-2. Historia con cifras animadas por intersección.
-3. Carta con tabs de categorías y cards de platillos.
-4. Galería de ambiente en slider responsive.
-5. Reservaciones con formulario y feedback visual de envío.
-6. Footer con navegación secundaria, contacto y horarios.
+1. Brand hero section with a full-screen background and parallax scroll effect.
+2. Story section with intersection-triggered animated figures.
+3. Menu section with category tabs and dish cards.
+4. Ambiance gallery in a responsive slider.
+5. Reservations section with a form and visual submission feedback.
+6. Footer with secondary navigation, contact details, and opening hours.
 
-## Desarrollo recomendado
+## Recommended Development Workflow
 
-- Para agregar nuevos platillos o bebidas, edita `src/data/menuData.json`.
-- Para ajustar paleta o tipografías, modifica variables en `src/styles/global.css`.
-- Para añadir animaciones numéricas reutiliza `src/hooks/useCountUp.ts`.
+- To add new dishes or drinks, edit `src/data/menuData.json`.
+- To adjust the color palette or typography, update variables in `src/styles/global.css`.
+- To add numeric animations, reuse `src/hooks/useCountUp.ts`.
 
-## Build y despliegue
+## Build and Deployment
 
-Genera una versión de producción con:
+Generate a production build with:
 
 ```bash
 pnpm build
 ```
 
-Luego puedes validar localmente el resultado con:
+Then validate the result locally with:
 
 ```bash
 pnpm preview
 ```
 
-## Licencia
+## License
 
-Este proyecto no incluye licencia explícita en el repositorio. Si planeas reutilizarlo públicamente, agrega una licencia (por ejemplo, MIT).
+This project does not currently include an explicit license in the repository. If you plan to reuse it publicly, add a license (for example, MIT).
