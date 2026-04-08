@@ -8,7 +8,10 @@ env.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-const allowedOrigins = ["http://localhost:4321"];
+const allowedOrigins = [
+  "http://localhost:4321",
+  "https://aurum-restaurant-iota.vercel.app/",
+];
 
 app.use(
   cors({
