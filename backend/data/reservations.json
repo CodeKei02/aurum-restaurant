@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "nombre": "santiago",
+    "telefono": "42123541",
+    "fecha": "2026-05-01",
+    "hora": "20:30",
+    "comensales": "5",
+    "ocasion": "Cumpleaños"
+  }
+]
