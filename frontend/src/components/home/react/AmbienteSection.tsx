@@ -55,6 +55,7 @@ function ChevronIcon({ direction }: { direction: ChevronDirection }) {
 
 export default function AmbienteSection() {
   const swiperRef = useRef<SwiperType | null>(null);
+  const canLoop = GALLERY_IMAGES.length >= 5;
 
   return (
     <section id="ambiente" className="overflow-hidden bg-dark-lighter py-28">
@@ -96,7 +97,7 @@ export default function AmbienteSection() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          loop={true}
+          loop={canLoop}
           slidesPerView={1.15}
           spaceBetween={16}
           centeredSlides={false}
