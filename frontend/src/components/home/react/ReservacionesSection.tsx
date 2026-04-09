@@ -29,6 +29,12 @@ const OCASIONES = [
 ];
 
 export default function ReservacionesSection() {
+  const apiBaseUrl =
+    (import.meta.env.PUBLIC_API_URL as string | undefined)?.replace(
+      /\/$/,
+      '',
+    ) || 'http://localhost:3000';
+
   const [form, setForm] = useState<ReservationFormData>({
     nombre: '',
     telefono: '',
@@ -58,7 +64,7 @@ export default function ReservacionesSection() {
         ocasion: form.ocasion,
       };
 
-      const response = await fetch('http://localhost:3000/api/reservations', {
+      const response = await fetch(`${apiBaseUrl}/api/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
