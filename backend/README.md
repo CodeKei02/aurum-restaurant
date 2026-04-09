@@ -43,9 +43,11 @@ Create a `.env` file in the `backend` folder:
 
 ```env
 PORT=3000
+ALLOWED_ORIGINS=http://localhost:4321,https://aurum-restaurant-iota.vercel.app
 ```
 
 If `PORT` is not set, the server defaults to `3000`.
+If `ALLOWED_ORIGINS` is not set, CORS defaults to `http://localhost:4321`.
 
 ## Run the Server
 
@@ -69,9 +71,11 @@ http://localhost:3000/api/reservations
 
 ## CORS
 
-Allowed origin:
+Allowed origins are read from `ALLOWED_ORIGINS` as a comma-separated list.
 
-- `http://localhost:4321`
+Example:
+
+- `http://localhost:4321,https://aurum-restaurant-iota.vercel.app`
 
 Allowed methods:
 
