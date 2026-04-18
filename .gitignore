@@ -39,3 +39,10 @@ frontend/.tmp/
 frontend/.sass-cache/
 frontend/coverage/
 frontend/*.log
+
+# backend local settings and secrets
+backend/.env
+backend/.env.local
+backend/.env.development
+backend/.env.production
+backend/postgres
