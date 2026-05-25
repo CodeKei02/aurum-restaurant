@@ -1,5 +1,6 @@
 # build output
 frontend/dist/
+backend/dist/
 
 # generated types
 frontend/.astro/

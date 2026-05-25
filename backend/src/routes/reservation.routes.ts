@@ -1,8 +1,8 @@
-import { Router } from "express";
+import { Router, type IRouter } from "express";
 import * as reservationController from "../controllers/reservation.controller.js";
 import { reservationSchema } from "../middlewares/reservation.validator.js";
 
-const router = Router();
+const router: IRouter = Router();
 
 router
   .route("/")
