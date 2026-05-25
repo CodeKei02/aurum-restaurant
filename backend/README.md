@@ -5,6 +5,7 @@ Express-based REST API for managing restaurant reservations.
 ## Tech Stack
 
 - Node.js
+- TypeScript
 - Express
 - PostgreSQL
 - pg
@@ -25,7 +26,10 @@ backend/
 		middlewares/
 		routes/
 		services/
-		server.js
+		types/
+		utils/
+		server.ts
+	dist/
 	docker-compose.yml
 ```
 
@@ -97,7 +101,14 @@ pnpm run dev
 Production:
 
 ```bash
+pnpm run build
 pnpm start
+```
+
+Type check (without emit):
+
+```bash
+pnpm run typecheck
 ```
 
 Base URL:
