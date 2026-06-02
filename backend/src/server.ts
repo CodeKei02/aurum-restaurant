@@ -1,12 +1,11 @@
-import env from "dotenv";
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import type { CorsOptions } from "cors";
 import type { Request, Response } from "express";
 import reservationRoutes from "./routes/reservation.routes.js";
 import type { RouteNotFoundResponse } from "./types/reservation.types.js";
-
-env.config();
+import { prisma } from "./lib/prisma.js";
 
 const PORT = Number(process.env.PORT) || 3000;
 const app = express();
@@ -48,6 +47,15 @@ app.use((req: Request, res: Response<RouteNotFoundResponse>) => {
   res.status(404).json({ error: "Ruta no encontrada", path: req.originalUrl });
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}/api/reservations`);
 });
+
+async function shutdown(): Promise<void> {
+  server.close();
+  await prisma.$disconnect();
+  process.exit(0);
+}
+
+process.on("SIGINT", () => void shutdown());
+process.on("SIGTERM", () => void shutdown());
