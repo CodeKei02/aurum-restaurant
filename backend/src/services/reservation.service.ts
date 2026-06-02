@@ -1,24 +1,39 @@
-import fs from "node:fs/promises";
-import { join } from "node:path";
-import type { Reservation } from "../types/reservation.types.js";
-import { parseReservations } from "../utils/reservation.guards.js";
+import { prisma } from "../lib/prisma.js";
+import type {
+  Reservation,
+  ReservationInput,
+} from "../types/reservation.types.js";
 
-const DB_PATH = join(process.cwd(), "data", "reservations.json");
+export async function findAll(): Promise<Reservation[]> {
+  return prisma.reservation.findMany({
+    orderBy: [{ fecha: "asc" }, { hora: "asc" }],
+  });
+}
 
-export async function getAll(): Promise<Reservation[]> {
+export async function findById(id: string): Promise<Reservation | null> {
+  return prisma.reservation.findUnique({ where: { id } });
+}
+
+export async function create(data: ReservationInput): Promise<Reservation> {
+  return prisma.reservation.create({ data });
+}
+
+export async function update(
+  id: string,
+  data: ReservationInput,
+): Promise<Reservation | null> {
   try {
-    const data = await fs.readFile(DB_PATH, "utf-8");
-    return parseReservations(data);
+    return await prisma.reservation.update({ where: { id }, data });
   } catch {
-    return [];
+    return null;
   }
 }
 
-export async function saveAll(reservations: Reservation[]): Promise<void> {
+export async function remove(id: string): Promise<boolean> {
   try {
-    await fs.writeFile(DB_PATH, JSON.stringify(reservations, null, 2));
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : String(error);
-    console.error("Error saving reservations:", message);
+    await prisma.reservation.delete({ where: { id } });
+    return true;
+  } catch {
+    return false;
   }
 }

@@ -88,7 +88,14 @@ Point `POSTGRES_URL` to your existing database.
 
 ## Database Initialization
 
-The `reservations` table is created automatically when the server starts (`CREATE TABLE IF NOT EXISTS ...`).
+Apply Prisma migrations (from the `backend` folder, with Postgres running):
+
+```bash
+pnpm exec prisma migrate dev
+pnpm exec prisma generate
+```
+
+Reservations are stored in PostgreSQL via Prisma (`Reservation` model, table `LogModel`).
 
 ## Run the Server
 
