@@ -4,13 +4,14 @@
   "description": "",
   "main": "dist/server.js",
   "type": "module",
+  "engines": { "node": ">=20.0.0" },
   "scripts": {
     "build": "prisma generate && tsc",
     "start": "node dist/server.js",
     "dev": "nodemon",
     "typecheck": "tsc --noEmit",
     "prisma:generate": "prisma generate",
-    "engines": { "node": ">=20.0.0" }
+    
   },
   "keywords": [],
   "author": "",
