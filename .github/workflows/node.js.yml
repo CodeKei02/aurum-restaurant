@@ -17,6 +17,6 @@ jobs:
       - name: "Hello World"
         run: echo "Hello World"
       - name: "Dime el nombre la fecha de hoy"
-        run: echo "Hoy es 08 de Junio de 2026"
+        run: date
       - name: "Muestra el contenido del directorio"
         run: ls -la
