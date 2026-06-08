@@ -5,16 +5,18 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-  lo que sea xd:
-
+  build:
     runs-on: ubuntu-latest
-
 
     steps:
       - name: "Hello World"
         run: echo "Hello World"
+      - name: "Dime el nombre la fecha de hoy"
+        run: echo "Hoy es 08 de Junio de 2026"
+      - name: "Muestra el contenido del directorio"
+        run: ls -la
