@@ -15,9 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6.0.3
-      - name: "Hello World"
-        run: echo "Hello World"
-      - name: "Dime el nombre la fecha de hoy"
-        run: date
-      - name: "Muestra el contenido del directorio"
-        run: ls -la
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "pnpm"
+      - run: pnpm build
