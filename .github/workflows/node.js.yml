@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   platzi:
@@ -17,6 +17,12 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: "Hello world"
-        run: echo "Hello worl
-    
+      - uses: actions/checkout@v6.0.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm run lint
+      - run: pnpm run build
+      - run: pnpm run test
