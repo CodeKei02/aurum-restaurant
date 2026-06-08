@@ -1,0 +1,11 @@
+{
+  "name": "aurum-restaurant-website-workspace",
+  "private": true,
+  "packageManager": "pnpm@11.5.2",
+  "scripts": {
+    "frontend:dev": "pnpm --dir frontend dev",
+    "frontend:build": "pnpm --dir frontend build",
+    "backend:dev": "pnpm --dir backend dev",
+    "backend:build": "pnpm --dir backend build"
+  }
+}
