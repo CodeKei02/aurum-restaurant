@@ -1,0 +1,4 @@
+[build]
+  command = "pnpm install && pnpm --filter aurum-restaurant-website build"
+  publish = "frontend/dist"
+
